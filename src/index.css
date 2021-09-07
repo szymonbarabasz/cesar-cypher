@@ -1,13 +1,43 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background: url("cezar.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: bottom center;
+  background-repeat: no-repeat;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.content {
+  font-family: "Special Elite", cursive;
+  margin-top: 30px;
+  font-size: 250%;
+  background-color: violet;
+  border-radius: 40px;
+}
+.title p {
+  margin: 20px 40px;
+  font-size: 150%;
+}
+.codebtn,
+.decodeBtn {
+  border-radius: 40px;
+}
+.codebtn p,
+.decodeBtn p {
+  margin: 5px 10px;
+  font-size: 150%;
+  font-family: "Staatliches", cursive;
+}
+.input {
+  font-size: 150%;
+  margin-bottom: 10px;
+}
+.input p {
+  margin: 10px 20px;
 }
