@@ -11,11 +11,9 @@ const src =
   "AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSŚTUWVXYZŹŻaąbcćdeęfghijklłmnńoópqrsśtuwvxyzźż1234567890 ".split(
     ""
   );
-const coded: string[] = [];
 
 interface AppConstructor {
   encrypted: string;
-  rnd: number;
   decrypted: string;
   history: number[];
 }
@@ -26,7 +24,6 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       encrypted: "",
-      rnd: 0,
       decrypted: "",
       history: [],
     };
@@ -34,49 +31,23 @@ export default class App extends React.Component {
     this.handleDecrypt = this.handleDecrypt.bind(this);
   }
 
-  typingSetState(rnd: number) {
-    this.setState({
-      encrypted: coded.join(""),
-      rnd: rnd,
-      history: [...this.state.history, rnd],
-    });
-  }
-
-  removingText(targetValue: string) {
-    coded.splice(targetValue.length, coded.length - targetValue.length);
-    this.setState({
-      encrypted: coded.join(""),
-      history: this.state.history.filter(
-        (randomNumber) =>
-          this.state.history.indexOf(randomNumber) <= targetValue.length - 1
-      ),
-    });
-  }
-
   handleEncryptIn(e: React.ChangeEvent<HTMLInputElement>): void {
-    // let coded = prompt("what do you want to encrypt?");
-    const targetValue = e.target.value;
-    const lastEl = targetValue[targetValue.length - 1];
-    const rnd = Math.floor(Math.random() * (24 - 2 + 1) + 1);
-    console.log(rnd);
+    const targetValue = e.target.value.split("");
+    const historyArr: number[] = [];
 
-    if (targetValue.length < coded.length) {
-      return this.removingText(targetValue);
-    } else if (src.indexOf(lastEl) + rnd <= src.length - 1) {
-      return (
-        coded.splice(coded.length, 1, src[src.indexOf(lastEl) + rnd]),
-        this.typingSetState(rnd)
-      );
-    } else {
-      return (
-        coded.splice(
-          coded.length,
-          1,
-          src[src.indexOf(lastEl) + rnd - src.length]
-        ),
-        this.typingSetState(rnd)
-      );
-    }
+    const coded: string[] = targetValue.map((el, i) => {
+      const rnd = Math.floor(Math.random() * (24 - 2 + 1) + 1);
+      historyArr.push(rnd);
+      return src.indexOf(el) + rnd <= src.length - 1
+        ? (el = src[src.indexOf(el) + rnd])
+        : (el = src[src.indexOf(el) + rnd - src.length]);
+    });
+
+    this.setState({
+      encrypted: coded.join(""),
+      history: historyArr,
+      decrypted: targetValue.length ? this.state.decrypted : "",
+    });
   }
 
   handleDecrypt(): void {
@@ -87,13 +58,20 @@ export default class App extends React.Component {
         ? (el = src[src.indexOf(el) - historyArr[i] + src.length])
         : (el = src[src.indexOf(el) - historyArr[i]]);
     });
-    console.log(decryptedMsg);
     this.setState({ decrypted: decryptedMsg.join("") });
   }
 
+  handleEnter = (e: React.KeyboardEvent<HTMLInputElement>): void | null => {
+    if (e.key === "Enter") {
+      return this.handleDecrypt();
+    } else {
+      return null;
+    }
+  };
+
   render() {
     return (
-      <div className="app">
+      <div className="app" onKeyDown={this.handleEnter}>
         <h1 className="content title">
           <p>Ceasar Cypher</p>
         </h1>

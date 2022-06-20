@@ -6,38 +6,232 @@ body {
   background-attachment: fixed;
   background-position: bottom center;
   background-repeat: no-repeat;
-}
-.app {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-.content {
   font-family: "Special Elite", cursive;
-  margin-top: 30px;
-  font-size: 250%;
-  background-color: violet;
-  border-radius: 40px;
 }
-.title p {
+
+body .app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .app .content {
+  background-color: rgba(255, 50, 149, 0.8);
+  border-radius: 10px;
+  margin-top: 30px;
+  font-size: 150%;
+  -webkit-transition: width 2s linear;
+  transition: width 2s linear;
+}
+
+body .app .coded {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: rgba(255, 50, 149, 0.8);
+  border-radius: 10px;
+}
+
+body .app .coded .codedLabel {
+  padding: 10px 15px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 10px;
+  text-align: center;
+}
+
+body .app .coded .codedMessage {
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid #9a9a9a;
+  padding: 5px;
+  min-width: 25vw;
+  min-height: 36px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+body .app .empty {
+  opacity: 0;
+}
+
+body .app .decoded {
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid #9a9a9a;
+  padding: 5px;
+  min-width: 0;
+  min-height: 0;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+}
+
+body .app .title {
+  text-align: center;
+}
+
+body .app .title p {
   margin: 20px 40px;
   font-size: 150%;
 }
-.codebtn,
-.decodeBtn {
-  border-radius: 40px;
+
+body .app .inputLabel {
+  margin-bottom: 10px;
+  text-align: center;
 }
-.codebtn p,
-.decodeBtn p {
+
+body .app .inputLabel p {
+  margin: 10px 20px;
+}
+
+body .app .inputElement {
+  border-radius: 10px;
+  height: 32px;
+  width: 25%;
+}
+
+body .app .decodeBtn {
+  border-radius: 10px;
+}
+
+body .app .decodeBtn p {
   margin: 5px 10px;
   font-size: 150%;
   font-family: "Staatliches", cursive;
 }
-.input {
-  font-size: 150%;
-  margin-bottom: 10px;
+
+@media (max-width: 1100px) {
+  body .app .inputElement {
+    width: 40%;
+  }
+  body .app .coded .codedMessage {
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #9a9a9a;
+    padding: 5px;
+    min-width: 35vw;
+    min-height: 36px;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
 }
-.input p {
-  margin: 10px 20px;
+
+@media (max-width: 780px) {
+  body .app .inputElement {
+    width: 50%;
+  }
+  body .app .coded .codedMessage {
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #9a9a9a;
+    padding: 5px;
+    min-width: 45vw;
+    min-height: 36px;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
 }
+
+@media (max-width: 615px) {
+  body .app .inputElement {
+    width: 60%;
+  }
+  body .app .coded .codedMessage {
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #9a9a9a;
+    padding: 5px;
+    min-width: 65vw;
+    min-height: 36px;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+@media (max-width: 430px) {
+  body .app .inputElement {
+    width: 70%;
+  }
+  body .app .inputLabel p {
+    font-size: 80%;
+  }
+  body .app .coded .codedMessage {
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #9a9a9a;
+    padding: 5px;
+    min-width: 75vw;
+    min-height: 36px;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+@media (max-height: 560px) {
+  body .app .content {
+    margin-top: 5px;
+  }
+  body .app .coded {
+    margin: 10px;
+  }
+  body .app .coded .codedLabel {
+    margin: 0px;
+  }
+  body .decoded p {
+    margin: 8px;
+  }
+}
+/*# sourceMappingURL=index.css.map */

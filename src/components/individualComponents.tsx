@@ -6,19 +6,23 @@ export function InputEnter(props: {
 }): JSX.Element {
   return (
     <React.Fragment>
-      <div className="content input">
+      <div className="content inputLabel">
         <p>Enter text you want to encrypt:</p>
       </div>
-      <input type="text" onChange={props.onEncryptIn} />
+      <input
+        className="inputElement"
+        type="text"
+        onChange={props.onEncryptIn}
+      />
     </React.Fragment>
   );
 }
 
 export function Encryptedmsg(props: { coded: string }): JSX.Element {
   return (
-    <h2 className="content coded">
-      <p>Encrypted message:</p>
-      <p>{props.coded}</p>
+    <h2 className="coded">
+      <p className="codedLabel">Encrypted message:</p>
+      <p className="codedMessage">{props.coded}</p>
     </h2>
   );
 }
@@ -33,7 +37,7 @@ export function Decodebtn(props: { onDecrypt(): void }): JSX.Element {
 
 export function Decodedmsg(props: { decoded: string }): JSX.Element {
   return (
-    <h2 className="content decoded">
+    <h2 className={props.decoded ? "content decoded" : "content empty"}>
       <p>{props.decoded}</p>
     </h2>
   );

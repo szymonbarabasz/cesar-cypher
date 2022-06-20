@@ -1,0 +1,88 @@
+$first-breakpoint-width: 1100px;
+$second-breakpoint-width: 780px;
+$third-breakpoint-width: 615px;
+$fourth-breakpoint-width: 430px;
+
+$first-breakpoint-height: 560px;
+
+@media (max-width: $first-breakpoint-width) {
+  body {
+    .app {
+      .inputElement {
+        width: 40%;
+      }
+      .coded {
+        .codedMessage {
+          @include Messages(35vw, 36px);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $second-breakpoint-width) {
+  body {
+    .app {
+      .inputElement {
+        width: 50%;
+      }
+      .coded {
+        .codedMessage {
+          @include Messages(45vw, 36px);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $third-breakpoint-width) {
+  body {
+    .app {
+      .inputElement {
+        width: 60%;
+      }
+      .coded {
+        .codedMessage {
+          @include Messages(65vw, 36px);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $fourth-breakpoint-width) {
+  body {
+    .app {
+      .inputElement {
+        width: 70%;
+      }
+      .inputLabel p {
+        font-size: 80%;
+      }
+      .coded {
+        .codedMessage {
+          @include Messages(75vw, 36px);
+        }
+      }
+    }
+  }
+}
+
+@media (max-height: $first-breakpoint-height) {
+  body {
+    .app {
+      .content {
+        margin-top: 5px;
+      }
+      .coded {
+        margin: 10px;
+        .codedLabel {
+          margin: 0px;
+        }
+      }
+    }
+    .decoded p {
+      margin: 8px;
+    }
+  }
+}

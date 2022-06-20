@@ -1,0 +1,97 @@
+$borderRadius: 10px;
+$backgroundColor: rgba(255, 50, 149, 0.8);
+$border: 2px solid rgb(154, 154, 154);
+
+@mixin GlobalFlex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@mixin Messages($width, $height) {
+  text-align: center;
+  border-radius: $borderRadius;
+  border: $border;
+  padding: 5px;
+  min-width: $width;
+  min-height: $height;
+  height: max-content;
+  width: fit-content;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+@mixin backgroundBorderRadius {
+  background-color: $backgroundColor;
+  border-radius: $borderRadius;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url("cezar.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  font-family: "Special Elite", cursive;
+  .app {
+    @include GlobalFlex();
+    .content {
+      @include backgroundBorderRadius();
+      margin-top: 30px;
+      font-size: 150%;
+      transition: width 2s linear;
+    }
+    .coded {
+      @include GlobalFlex();
+      @include backgroundBorderRadius();
+      .codedLabel {
+        padding: 10px 15px;
+        width: fit-content;
+        margin: 10px;
+        text-align: center;
+      }
+      .codedMessage {
+        @include Messages(25vw, 36px);
+        margin: 0;
+      }
+    }
+    .empty {
+      opacity: 0;
+    }
+    .decoded {
+      @include Messages(0, 0);
+      opacity: 1;
+    }
+    .title {
+      text-align: center;
+      p {
+        margin: 20px 40px;
+        font-size: 150%;
+      }
+    }
+    .inputLabel {
+      margin-bottom: 10px;
+      text-align: center;
+      p {
+        margin: 10px 20px;
+      }
+    }
+    .inputElement {
+      border-radius: $borderRadius;
+      height: 32px;
+      width: 25%;
+    }
+    .decodeBtn {
+      border-radius: $borderRadius;
+      p {
+        margin: 5px 10px;
+        font-size: 150%;
+        font-family: "Staatliches", cursive;
+      }
+    }
+  }
+}
+
+@import "./media";
