@@ -222,7 +222,7 @@ body .app .decodeBtn p {
 
 @media (max-height: 560px) {
   body .app .content {
-    margin-top: 5px;
+    margin: 20px;
   }
   body .app .coded {
     margin: 10px;
@@ -232,6 +232,45 @@ body .app .decodeBtn p {
   }
   body .decoded p {
     margin: 8px;
+  }
+}
+
+@media (max-height: 470px) {
+  body .app .inputElement {
+    height: 26px;
+  }
+  body .app .content {
+    margin: 10px;
+  }
+  body .app .coded {
+    margin: 10px;
+  }
+  body .app .coded .codedLabel {
+    margin: 0px;
+  }
+  body .decoded p {
+    margin: 8px;
+  }
+}
+
+@media (max-height: 415px) {
+  body .app .inputElement {
+    height: 22px;
+  }
+  body .app .content {
+    margin: 5px;
+    font-size: 120%;
+  }
+  body .app .coded {
+    margin: 10px;
+    font-size: 120%;
+  }
+  body .app .coded .codedLabel {
+    margin: 0px;
+  }
+  body .decoded p {
+    margin: 8px;
+    font-size: 90%;
   }
 }
 /*# sourceMappingURL=index.css.map */

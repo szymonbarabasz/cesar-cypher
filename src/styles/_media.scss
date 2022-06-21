@@ -4,6 +4,8 @@ $third-breakpoint-width: 615px;
 $fourth-breakpoint-width: 430px;
 
 $first-breakpoint-height: 560px;
+$second-breakpoint-height: 470px;
+$third-breakpoint-height: 415px;
 
 @media (max-width: $first-breakpoint-width) {
   body {
@@ -72,7 +74,7 @@ $first-breakpoint-height: 560px;
   body {
     .app {
       .content {
-        margin-top: 5px;
+        margin: 20px;
       }
       .coded {
         margin: 10px;
@@ -83,6 +85,53 @@ $first-breakpoint-height: 560px;
     }
     .decoded p {
       margin: 8px;
+    }
+  }
+}
+
+@media (max-height: $second-breakpoint-height) {
+  body {
+    .app {
+      .inputElement {
+        height: 26px;
+      }
+      .content {
+        margin: 10px;
+      }
+      .coded {
+        margin: 10px;
+        .codedLabel {
+          margin: 0px;
+        }
+      }
+    }
+    .decoded p {
+      margin: 8px;
+    }
+  }
+}
+
+@media (max-height: $third-breakpoint-height) {
+  body {
+    .app {
+      .inputElement {
+        height: 22px;
+      }
+      .content {
+        margin: 5px;
+        font-size: 120%;
+      }
+      .coded {
+        margin: 10px;
+        font-size: 120%;
+        .codedLabel {
+          margin: 0px;
+        }
+      }
+    }
+    .decoded p {
+      margin: 8px;
+      font-size: 90%;
     }
   }
 }
