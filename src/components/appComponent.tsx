@@ -7,7 +7,7 @@ import {
   Decodedmsg,
 } from "./individualComponents";
 
-const src =
+const signsBase =
   "AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSŚTUWVXYZŹŻaąbcćdeęfghijklłmnńoópqrsśtuwvxyzźż1234567890 ".split(
     ""
   );
@@ -36,11 +36,14 @@ export default class App extends React.Component {
     const historyArr: number[] = [];
 
     const coded: string[] = targetValue.map((el, i) => {
-      const rnd = Math.floor(Math.random() * (24 - 2 + 1) + 1);
-      historyArr.push(rnd);
-      return src.indexOf(el) + rnd <= src.length - 1
-        ? (el = src[src.indexOf(el) + rnd])
-        : (el = src[src.indexOf(el) + rnd - src.length]);
+      const randomShiftNumber = Math.floor(Math.random() * (24 - 2 + 1) + 1);
+      historyArr.push(randomShiftNumber);
+      return signsBase.indexOf(el) + randomShiftNumber <= signsBase.length - 1
+        ? (el = signsBase[signsBase.indexOf(el) + randomShiftNumber])
+        : (el =
+            signsBase[
+              signsBase.indexOf(el) + randomShiftNumber - signsBase.length
+            ]);
     });
 
     this.setState({
@@ -54,9 +57,10 @@ export default class App extends React.Component {
     let decryptedMsg = this.state.encrypted.split("");
     const historyArr = this.state.history;
     decryptedMsg = decryptedMsg.map((el, i) => {
-      return src.indexOf(el) - historyArr[i] < 0
-        ? (el = src[src.indexOf(el) - historyArr[i] + src.length])
-        : (el = src[src.indexOf(el) - historyArr[i]]);
+      return signsBase.indexOf(el) - historyArr[i] < 0
+        ? (el =
+            signsBase[signsBase.indexOf(el) - historyArr[i] + signsBase.length])
+        : (el = signsBase[signsBase.indexOf(el) - historyArr[i]]);
     });
     this.setState({ decrypted: decryptedMsg.join("") });
   }
