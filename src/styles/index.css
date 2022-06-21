@@ -268,6 +268,21 @@ body .app .decodeBtn p {
   body .app .coded .codedLabel {
     margin: 0px;
   }
+  body .app .coded .codedMessage {
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #9a9a9a;
+    padding: 5px;
+    min-width: 30vw;
+    min-height: 27px;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
   body .decoded p {
     margin: 8px;
     font-size: 90%;

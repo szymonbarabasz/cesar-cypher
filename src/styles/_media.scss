@@ -127,6 +127,9 @@ $third-breakpoint-height: 415px;
         .codedLabel {
           margin: 0px;
         }
+        .codedMessage {
+          @include Messages(30vw, 27px);
+        }
       }
     }
     .decoded p {
