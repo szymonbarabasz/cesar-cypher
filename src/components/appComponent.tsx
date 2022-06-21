@@ -8,7 +8,7 @@ import {
 } from "./individualComponents";
 
 const signsBase =
-  "AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSŚTUWVXYZŹŻaąbcćdeęfghijklłmnńoópqrsśtuwvxyzźż1234567890 ".split(
+  "AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSŚTUWVXYZŹŻaąbcćdeęfghijklłmnńoópqrsśtuwvxyzźż1234567890~`!@#$%^&*()_-+={[]}|;:<>?/,.' ".split(
     ""
   );
 
