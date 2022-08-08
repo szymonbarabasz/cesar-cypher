@@ -5,7 +5,7 @@ export function InputEnter(props: {
   onEncryptIn(e: React.ChangeEvent<HTMLInputElement>): void;
 }): JSX.Element {
   return (
-    <React.Fragment>
+    <>
       <div className="content inputLabel">
         <p>Enter text you want to encrypt:</p>
       </div>
@@ -14,7 +14,7 @@ export function InputEnter(props: {
         type="text"
         onChange={props.onEncryptIn}
       />
-    </React.Fragment>
+    </>
   );
 }
 
@@ -27,9 +27,9 @@ export function Encryptedmsg(props: { coded: string }): JSX.Element {
   );
 }
 
-export function Decodebtn(props: { onDecrypt(): void }): JSX.Element {
+export function Decodebtn(): JSX.Element {
   return (
-    <button className="decodeBtn" onClick={props.onDecrypt}>
+    <button className="decodeBtn" type="submit">
       <p>Decrypt!</p>
     </button>
   );

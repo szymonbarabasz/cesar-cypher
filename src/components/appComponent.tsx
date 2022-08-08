@@ -35,7 +35,7 @@ export default class App extends React.Component {
     const targetValue = e.target.value.split("");
     const historyArr: number[] = [];
 
-    const coded: string[] = targetValue.map((el, i) => {
+    const coded: string[] = targetValue.map((el) => {
       const randomShiftNumber = Math.floor(Math.random() * (24 - 2 + 1) + 1);
       historyArr.push(randomShiftNumber);
       return signsBase.indexOf(el) + randomShiftNumber <= signsBase.length - 1
@@ -53,7 +53,9 @@ export default class App extends React.Component {
     });
   }
 
-  handleDecrypt(): void {
+  handleDecrypt(e: React.ChangeEvent<HTMLFormElement>): void {
+    e.preventDefault();
+
     let decryptedMsg = this.state.encrypted.split("");
     const historyArr = this.state.history;
     decryptedMsg = decryptedMsg.map((el, i) => {
@@ -65,24 +67,18 @@ export default class App extends React.Component {
     this.setState({ decrypted: decryptedMsg.join("") });
   }
 
-  handleEnter = (e: React.KeyboardEvent<HTMLInputElement>): void | null => {
-    if (e.key === "Enter") {
-      return this.handleDecrypt();
-    } else {
-      return null;
-    }
-  };
-
   render() {
     return (
-      <div className="app" onKeyDown={this.handleEnter}>
+      <div className="app">
         <h1 className="content title">
           <p>Ceasar Cypher</p>
         </h1>
-        <InputEnter onEncryptIn={this.handleEncryptIn} />
-        <Encryptedmsg coded={this.state.encrypted} />
-        <Decodebtn onDecrypt={this.handleDecrypt} />
-        <Decodedmsg decoded={this.state.decrypted} />
+        <form className="form" onSubmit={this.handleDecrypt}>
+          <InputEnter onEncryptIn={this.handleEncryptIn} />
+          <Encryptedmsg coded={this.state.encrypted} />
+          <Decodebtn />
+          <Decodedmsg decoded={this.state.decrypted} />
+        </form>
       </div>
     );
   }

@@ -43,27 +43,6 @@ body {
       font-size: 150%;
       transition: width 2s linear;
     }
-    .coded {
-      @include GlobalFlex();
-      @include backgroundBorderRadius();
-      .codedLabel {
-        padding: 10px 15px;
-        width: fit-content;
-        margin: 10px;
-        text-align: center;
-      }
-      .codedMessage {
-        @include Messages(25vw, 36px);
-        margin: 0;
-      }
-    }
-    .empty {
-      opacity: 0;
-    }
-    .decoded {
-      @include Messages(0, 0);
-      opacity: 1;
-    }
     .title {
       text-align: center;
       p {
@@ -71,24 +50,50 @@ body {
         font-size: 150%;
       }
     }
-    .inputLabel {
-      margin-bottom: 10px;
-      text-align: center;
-      p {
-        margin: 10px 20px;
+    .form {
+      @include GlobalFlex();
+      .coded {
+        @include GlobalFlex();
+        @include backgroundBorderRadius();
+        .codedLabel {
+          padding: 10px 15px;
+          width: fit-content;
+          margin: 10px;
+          text-align: center;
+        }
+        .codedMessage {
+          @include Messages(25vw, 36px);
+          margin: 0;
+        }
+      }
+      .empty {
+        opacity: 0;
+      }
+      .decoded {
+        @include Messages(0, 0);
+        opacity: 1;
       }
     }
-    .inputElement {
-      border-radius: $borderRadius;
-      height: 32px;
-      width: 25%;
-    }
-    .decodeBtn {
-      border-radius: $borderRadius;
-      p {
-        margin: 5px 10px;
-        font-size: 150%;
-        font-family: "Staatliches", cursive;
+    .form {
+      .inputLabel {
+        margin-bottom: 10px;
+        text-align: center;
+        p {
+          margin: 10px 20px;
+        }
+      }
+      .inputElement {
+        border-radius: $borderRadius;
+        height: 32px;
+        width: 25vw;
+      }
+      .decodeBtn {
+        border-radius: $borderRadius;
+        p {
+          margin: 5px 10px;
+          font-size: 150%;
+          font-family: "Staatliches", cursive;
+        }
       }
     }
   }

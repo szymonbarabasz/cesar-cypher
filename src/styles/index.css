@@ -8,51 +8,41 @@ body {
   background-repeat: no-repeat;
   font-family: "Special Elite", cursive;
 }
-
 body .app {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-
 body .app .content {
   background-color: rgba(255, 50, 149, 0.8);
   border-radius: 10px;
   margin-top: 30px;
   font-size: 150%;
-  -webkit-transition: width 2s linear;
   transition: width 2s linear;
 }
-
-body .app .coded {
-  display: -webkit-box;
-  display: -ms-flexbox;
+body .app .title {
+  text-align: center;
+}
+body .app .title p {
+  margin: 20px 40px;
+  font-size: 150%;
+}
+body .app .form {
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+body .app .form .coded {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background-color: rgba(255, 50, 149, 0.8);
   border-radius: 10px;
 }
-
-body .app .coded .codedLabel {
+body .app .form .coded .codedLabel {
   padding: 10px 15px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -60,11 +50,10 @@ body .app .coded .codedLabel {
   margin: 10px;
   text-align: center;
 }
-
-body .app .coded .codedMessage {
+body .app .form .coded .codedMessage {
   text-align: center;
   border-radius: 10px;
-  border: 2px solid #9a9a9a;
+  border: 2px solid rgb(154, 154, 154);
   padding: 5px;
   min-width: 25vw;
   min-height: 36px;
@@ -77,15 +66,13 @@ body .app .coded .codedMessage {
   background-color: rgba(255, 255, 255, 0.5);
   margin: 0;
 }
-
-body .app .empty {
+body .app .form .empty {
   opacity: 0;
 }
-
-body .app .decoded {
+body .app .form .decoded {
   text-align: center;
   border-radius: 10px;
-  border: 2px solid #9a9a9a;
+  border: 2px solid rgb(154, 154, 154);
   padding: 5px;
   min-width: 0;
   min-height: 0;
@@ -98,49 +85,35 @@ body .app .decoded {
   background-color: rgba(255, 255, 255, 0.5);
   opacity: 1;
 }
-
-body .app .title {
-  text-align: center;
-}
-
-body .app .title p {
-  margin: 20px 40px;
-  font-size: 150%;
-}
-
-body .app .inputLabel {
+body .app .form .inputLabel {
   margin-bottom: 10px;
   text-align: center;
 }
-
-body .app .inputLabel p {
+body .app .form .inputLabel p {
   margin: 10px 20px;
 }
-
-body .app .inputElement {
+body .app .form .inputElement {
   border-radius: 10px;
   height: 32px;
-  width: 25%;
+  width: 25vw;
 }
-
-body .app .decodeBtn {
+body .app .form .decodeBtn {
   border-radius: 10px;
 }
-
-body .app .decodeBtn p {
+body .app .form .decodeBtn p {
   margin: 5px 10px;
   font-size: 150%;
   font-family: "Staatliches", cursive;
 }
 
 @media (max-width: 1100px) {
-  body .app .inputElement {
-    width: 40%;
+  body .app .form .inputElement {
+    width: 40vw;
   }
-  body .app .coded .codedMessage {
+  body .app .form .coded .codedMessage {
     text-align: center;
     border-radius: 10px;
-    border: 2px solid #9a9a9a;
+    border: 2px solid rgb(154, 154, 154);
     padding: 5px;
     min-width: 35vw;
     min-height: 36px;
@@ -153,15 +126,14 @@ body .app .decodeBtn p {
     background-color: rgba(255, 255, 255, 0.5);
   }
 }
-
 @media (max-width: 780px) {
-  body .app .inputElement {
-    width: 50%;
+  body .app .form .inputElement {
+    width: 50vw;
   }
-  body .app .coded .codedMessage {
+  body .app .form .coded .codedMessage {
     text-align: center;
     border-radius: 10px;
-    border: 2px solid #9a9a9a;
+    border: 2px solid rgb(154, 154, 154);
     padding: 5px;
     min-width: 45vw;
     min-height: 36px;
@@ -174,15 +146,14 @@ body .app .decodeBtn p {
     background-color: rgba(255, 255, 255, 0.5);
   }
 }
-
 @media (max-width: 615px) {
-  body .app .inputElement {
-    width: 60%;
+  body .app .form .inputElement {
+    width: 60vw;
   }
-  body .app .coded .codedMessage {
+  body .app .form .coded .codedMessage {
     text-align: center;
     border-radius: 10px;
-    border: 2px solid #9a9a9a;
+    border: 2px solid rgb(154, 154, 154);
     padding: 5px;
     min-width: 65vw;
     min-height: 36px;
@@ -195,18 +166,17 @@ body .app .decodeBtn p {
     background-color: rgba(255, 255, 255, 0.5);
   }
 }
-
 @media (max-width: 430px) {
-  body .app .inputElement {
-    width: 70%;
+  body .app .form .inputElement {
+    width: 70vw;
   }
-  body .app .inputLabel p {
+  body .app .form .inputLabel p {
     font-size: 80%;
   }
-  body .app .coded .codedMessage {
+  body .app .form .coded .codedMessage {
     text-align: center;
     border-radius: 10px;
-    border: 2px solid #9a9a9a;
+    border: 2px solid rgb(154, 154, 154);
     padding: 5px;
     min-width: 75vw;
     min-height: 36px;
@@ -219,59 +189,56 @@ body .app .decodeBtn p {
     background-color: rgba(255, 255, 255, 0.5);
   }
 }
-
 @media (max-height: 560px) {
-  body .app .content {
+  body .app .form .content {
     margin: 20px;
   }
-  body .app .coded {
+  body .app .form .coded {
     margin: 10px;
   }
-  body .app .coded .codedLabel {
+  body .app .form .coded .codedLabel {
     margin: 0px;
   }
   body .decoded p {
     margin: 8px;
   }
 }
-
 @media (max-height: 470px) {
-  body .app .inputElement {
+  body .app .form .inputElement {
     height: 26px;
   }
-  body .app .content {
+  body .app .form .content {
     margin: 10px;
   }
-  body .app .coded {
+  body .app .form .coded {
     margin: 10px;
   }
-  body .app .coded .codedLabel {
+  body .app .form .coded .codedLabel {
     margin: 0px;
   }
   body .decoded p {
     margin: 8px;
   }
 }
-
 @media (max-height: 415px) {
-  body .app .inputElement {
+  body .app .form .inputElement {
     height: 22px;
   }
-  body .app .content {
+  body .app .form .content {
     margin: 5px;
     font-size: 120%;
   }
-  body .app .coded {
+  body .app .form .coded {
     margin: 10px;
     font-size: 120%;
   }
-  body .app .coded .codedLabel {
+  body .app .form .coded .codedLabel {
     margin: 0px;
   }
-  body .app .coded .codedMessage {
+  body .app .form .coded .codedMessage {
     text-align: center;
     border-radius: 10px;
-    border: 2px solid #9a9a9a;
+    border: 2px solid rgb(154, 154, 154);
     padding: 5px;
     min-width: 30vw;
     min-height: 27px;
@@ -287,5 +254,4 @@ body .app .decodeBtn p {
     margin: 8px;
     font-size: 90%;
   }
-}
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */

@@ -10,12 +10,14 @@ $third-breakpoint-height: 415px;
 @media (max-width: $first-breakpoint-width) {
   body {
     .app {
-      .inputElement {
-        width: 40%;
-      }
-      .coded {
-        .codedMessage {
-          @include Messages(35vw, 36px);
+      .form {
+        .inputElement {
+          width: 40vw;
+        }
+        .coded {
+          .codedMessage {
+            @include Messages(35vw, 36px);
+          }
         }
       }
     }
@@ -25,12 +27,14 @@ $third-breakpoint-height: 415px;
 @media (max-width: $second-breakpoint-width) {
   body {
     .app {
-      .inputElement {
-        width: 50%;
-      }
-      .coded {
-        .codedMessage {
-          @include Messages(45vw, 36px);
+      .form {
+        .inputElement {
+          width: 50vw;
+        }
+        .coded {
+          .codedMessage {
+            @include Messages(45vw, 36px);
+          }
         }
       }
     }
@@ -40,12 +44,14 @@ $third-breakpoint-height: 415px;
 @media (max-width: $third-breakpoint-width) {
   body {
     .app {
-      .inputElement {
-        width: 60%;
-      }
-      .coded {
-        .codedMessage {
-          @include Messages(65vw, 36px);
+      .form {
+        .inputElement {
+          width: 60vw;
+        }
+        .coded {
+          .codedMessage {
+            @include Messages(65vw, 36px);
+          }
         }
       }
     }
@@ -55,15 +61,17 @@ $third-breakpoint-height: 415px;
 @media (max-width: $fourth-breakpoint-width) {
   body {
     .app {
-      .inputElement {
-        width: 70%;
-      }
-      .inputLabel p {
-        font-size: 80%;
-      }
-      .coded {
-        .codedMessage {
-          @include Messages(75vw, 36px);
+      .form {
+        .inputElement {
+          width: 70vw;
+        }
+        .inputLabel p {
+          font-size: 80%;
+        }
+        .coded {
+          .codedMessage {
+            @include Messages(75vw, 36px);
+          }
         }
       }
     }
@@ -73,13 +81,15 @@ $third-breakpoint-height: 415px;
 @media (max-height: $first-breakpoint-height) {
   body {
     .app {
-      .content {
-        margin: 20px;
-      }
-      .coded {
-        margin: 10px;
-        .codedLabel {
-          margin: 0px;
+      .form {
+        .content {
+          margin: 20px;
+        }
+        .coded {
+          margin: 10px;
+          .codedLabel {
+            margin: 0px;
+          }
         }
       }
     }
@@ -92,16 +102,18 @@ $third-breakpoint-height: 415px;
 @media (max-height: $second-breakpoint-height) {
   body {
     .app {
-      .inputElement {
-        height: 26px;
-      }
-      .content {
-        margin: 10px;
-      }
-      .coded {
-        margin: 10px;
-        .codedLabel {
-          margin: 0px;
+      .form {
+        .inputElement {
+          height: 26px;
+        }
+        .content {
+          margin: 10px;
+        }
+        .coded {
+          margin: 10px;
+          .codedLabel {
+            margin: 0px;
+          }
         }
       }
     }
@@ -114,21 +126,23 @@ $third-breakpoint-height: 415px;
 @media (max-height: $third-breakpoint-height) {
   body {
     .app {
-      .inputElement {
-        height: 22px;
-      }
-      .content {
-        margin: 5px;
-        font-size: 120%;
-      }
-      .coded {
-        margin: 10px;
-        font-size: 120%;
-        .codedLabel {
-          margin: 0px;
+      .form {
+        .inputElement {
+          height: 22px;
         }
-        .codedMessage {
-          @include Messages(30vw, 27px);
+        .content {
+          margin: 5px;
+          font-size: 120%;
+        }
+        .coded {
+          margin: 10px;
+          font-size: 120%;
+          .codedLabel {
+            margin: 0px;
+          }
+          .codedMessage {
+            @include Messages(30vw, 27px);
+          }
         }
       }
     }
